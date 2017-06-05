@@ -88,7 +88,8 @@
         <activity android:name=".logisticsRecive.CaptureMoreActivity" />
         <activity android:name=".logisticsRecive.ShowScanLogisticsActivity" />
         <activity android:name=".logisticsRecive.LogisticsGetActivity" />
-        <activity android:name=".logisticsRecive.LogisticsForActivity"/>
+        <activity android:name=".logisticsRecive.LogisticsForActivity" />
+        <activity android:name=".customer.CustomerActivity"></activity>
     </application>
 
 </manifest>

@@ -167,7 +167,7 @@ public class LoginActivity extends Activity {
                     WifiInfo info = wifi.getConnectionInfo();
                     TelephonyManager tm = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
                     params.put("imei",tm.getDeviceId());
-                    params.put("cpsCode",name);
+                    params.put("code",name);
                     params.put("password",password);
                     params.put("mac", info.getMacAddress());
                     client.post(url, params, new TextHttpResponseHandler() {
