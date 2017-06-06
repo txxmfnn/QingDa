@@ -27,7 +27,7 @@
             android:id="@+id/rl_input_customer_SearchFrameDelete"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
-            android:layout_toLeftOf="@id/bt_inputPlan_search"
+            android:layout_toLeftOf="@id/bt_input_customer_search"
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <EditText
@@ -51,7 +51,7 @@
 
     </RelativeLayout>
     <ListView android:id="@+id/lv_input_customer_result"
-        android:layout_below="@id/rl_inputPlan_top"
+        android:layout_below="@id/rl_input_customer_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

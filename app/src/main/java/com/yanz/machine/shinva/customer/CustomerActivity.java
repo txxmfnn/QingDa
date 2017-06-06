@@ -97,8 +97,8 @@ public class CustomerActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 BCustomer customer = (BCustomer) lvResult.getItemAtPosition(position);
                 Intent intent = new Intent();
-                intent.setClass(CustomerActivity.this, MainActivity.class);//详细查询暂空
-                intent.putExtra("customerName",customer.getCcustomerName());
+                intent.setClass(CustomerActivity.this, CustomerDetailActivity.class);
+                intent.putExtra("autoId",customer.getIautoid());
                 startActivity(intent);
             }
         });

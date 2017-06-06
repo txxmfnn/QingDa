@@ -29,6 +29,7 @@ import com.xys.libzxing.zxing.activity.CaptureActivity;
 import com.yanz.machine.shinva.Adapter.Adapter_GridView;
 import com.yanz.machine.shinva.Adapter.MyGridAdapter;
 import com.yanz.machine.shinva.MyView.MyGridView;
+import com.yanz.machine.shinva.customer.CustomerActivity;
 import com.yanz.machine.shinva.entity.UpdateInfo;
 import com.yanz.machine.shinva.logisticsRecive.LogisticsForActivity;
 import com.yanz.machine.shinva.logisticsRecive.LogisticsGetActivity;
@@ -74,7 +75,7 @@ public class HomeFragment extends Fragment {
             R.drawable.menu_delivery_ledger
     };
     public String[] img_menu_text_search = {
-            "生产跟踪",
+            "顾客查询",
             "物料查询",
             "成品订单",
             "质量事故",
@@ -144,8 +145,8 @@ public class HomeFragment extends Fragment {
                 String versionName = pi.versionName;
                 new AlertDialog.Builder(getActivity())
                         .setIcon(getResources().getDrawable(R.drawable.waring_icon))
-                        .setTitle("SHINVA")
-                        .setMessage("新华医疗机械制造厂 \n生产管理系统\n版本信息: "+versionName)
+                        .setTitle("QingDa")
+                        .setMessage("清大德人\n版本信息: "+versionName)
                         .create().show();
 
             }
@@ -177,7 +178,7 @@ public class HomeFragment extends Fragment {
                 switch (position){
                     case 0:
 //                        Toast.makeText(getActivity(),"生产跟踪功能功能暂未开放",Toast.LENGTH_SHORT).show();
-                        intent.setClass(getActivity(), PlanTrackActivity.class);
+                        intent.setClass(getActivity(), CustomerActivity.class);
                         startActivity(intent);
                         break;
                     case 1:
