@@ -32,7 +32,6 @@
             android:layout_height="30dp">
             <EditText
                 android:id="@+id/et_input_customer_search"
-                android:inputType="phone"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/search_frame"
                 android:paddingLeft="32dp"
