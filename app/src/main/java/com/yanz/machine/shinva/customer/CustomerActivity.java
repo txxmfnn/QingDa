@@ -96,9 +96,10 @@ public class CustomerActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 BCustomer customer = (BCustomer) lvResult.getItemAtPosition(position);
+                String autoId = customer.getIautoid().toString();
                 Intent intent = new Intent();
+                intent.putExtra("autoId",autoId);
                 intent.setClass(CustomerActivity.this, CustomerDetailActivity.class);
-                intent.putExtra("autoId",customer.getIautoid());
                 startActivity(intent);
             }
         });
@@ -106,7 +107,7 @@ public class CustomerActivity extends AppCompatActivity {
     public void initData(){
         String url = HttpUtil.BASE_URL+uri;
         RequestParams params = new RequestParams();
-        params.put("customerNa",etCustomerName.getText().toString());
+        params.put("name",etCustomerName.getText().toString());
         AsyncHttpClient client = new AsyncHttpClient();
         client.post(url, params, new TextHttpResponseHandler() {
             @Override
@@ -169,6 +170,7 @@ public class CustomerActivity extends AppCompatActivity {
             tvAddress.setText(customer.getCaddress());
             tvTelephone.setText(customer.getCtelephone());
             tvInterest.setText(customer.getCinterests());
+
             return convertView;
         }
     }
