@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class FaceActivity extends Activity {
     private static final int GO_TO_LOGIN_ACTIVITY = 1;
-    DataBaseHelper dbHelper;
+    //DataBaseHelper dbHelper;
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -40,7 +40,7 @@ public class FaceActivity extends Activity {
 
         //getSupportActionBar().hide();//隐藏标题，继承自appActivity，所以用这种方式
         //创建数据库DatabaseHelper对象,制定数据库版本为1,此处使用相对路径即可
-        dbHelper = new DataBaseHelper(this);
+        /*dbHelper = new DataBaseHelper(this);
 
         //自动检查更新
         Toast.makeText(FaceActivity.this,"正在检查更新...",Toast.LENGTH_SHORT).show();
@@ -57,7 +57,7 @@ public class FaceActivity extends Activity {
                 }
                 Looper.loop();
             }
-        }.start();
+        }.start();*/
 
         //更改UI
         Message message = new Message();
@@ -77,8 +77,8 @@ public class FaceActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (dbHelper!=null){
+        /*if (dbHelper!=null){
             dbHelper.close();
-        }
+        }*/
     }
 }

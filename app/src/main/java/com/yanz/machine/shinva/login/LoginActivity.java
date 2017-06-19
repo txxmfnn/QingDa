@@ -52,7 +52,7 @@ public class LoginActivity extends Activity {
 
     private MyApplication application;
 
-    String uri = "/login/check";
+    String uri = "/user/login";
     private boolean isExit;
     Handler mHandler = new Handler(){
         @Override
@@ -122,7 +122,7 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
         //获取界面内两个编辑框
         etName = (EditText) findViewById(R.id.userEditText);
-        etName.setInputType(InputType.TYPE_CLASS_NUMBER);
+        //etName.setInputType(InputType.TYPE_CLASS_NUMBER);
         etPass = (EditText) findViewById(R.id.pwdEditText);
         //获取按钮
         bnLogin = (Button) findViewById(R.id.sLogin);
@@ -163,13 +163,13 @@ public class LoginActivity extends Activity {
                     AsyncHttpClient client = new AsyncHttpClient();
                     url = HttpUtil.BASE_URL+uri;
                     RequestParams params = new RequestParams();
-                    WifiManager wifi = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-                    WifiInfo info = wifi.getConnectionInfo();
-                    TelephonyManager tm = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-                    params.put("imei",tm.getDeviceId());
+                   // WifiManager wifi = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                    //WifiInfo info = wifi.getConnectionInfo();
+                    //TelephonyManager tm = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+                    //params.put("imei",tm.getDeviceId());
                     params.put("code",name);
                     params.put("password",password);
-                    params.put("mac", info.getMacAddress());
+                    //params.put("mac", info.getMacAddress());
                     client.post(url, params, new TextHttpResponseHandler() {
                         @Override
                         public void onFailure(int statusCode, Header[] headers, String message, Throwable throwable) {
@@ -184,12 +184,12 @@ public class LoginActivity extends Activity {
                                     if (message.contains("true@@")){
                                         String[] msg = message.split("@@");
                                         String result = msg[1];
-                                        BPerson bPerson ;
-                                        bPerson = (BPerson) JsonUtil.jsonToObject(result,BPerson.class);
-                                        MyApplication myApplication = (MyApplication) getApplication();
-                                        myApplication.setUserInfo(bPerson);
-//                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                                        startActivity(intent);
+//                                        BPerson bPerson ;
+//                                        bPerson = (BPerson) JsonUtil.jsonToObject(result,BPerson.class);
+//                                        MyApplication myApplication = (MyApplication) getApplication();
+//                                        myApplication.setUserInfo(bPerson);
+////                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+////                                        startActivity(intent);
                                         Message msg2 = Message.obtain();
                                         msg2.what = MSG_INIT_OK;
                                         mHandler.sendMessage(msg2);

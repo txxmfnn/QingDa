@@ -3,7 +3,6 @@ package com.yanz.machine.shinva.entity;
 
 
 
-
 public class SVisitRecord implements java.io.Serializable {
 
 	// Fields
@@ -161,5 +160,6 @@ public class SVisitRecord implements java.io.Serializable {
 	public void setCweather(String cweather) {
 		this.cweather = cweather;
 	}
+
 
 }

@@ -3,6 +3,8 @@ package com.yanz.machine.shinva.customer;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,6 +13,7 @@ import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.yanz.machine.shinva.R;
 import com.yanz.machine.shinva.entity.BCustomer;
+import com.yanz.machine.shinva.record.RecordDetailActivity;
 import com.yanz.machine.shinva.util.HttpUtil;
 
 import org.codehaus.jackson.map.ObjectMapper;
@@ -33,6 +36,12 @@ public class CustomerDetailActivity extends AppCompatActivity {
     private TextView family;
     private TextView child;
     private TextView decision;
+    //提取姓名/编码|门店/编码
+    private String rName;
+    private String rNameCode;
+    private String rDept;
+    private String rDeptCode;
+    private Button addRecord;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +60,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
         family = (TextView) findViewById(R.id.tv_customer_detail_family);
         child = (TextView) findViewById(R.id.tv_customer_detail_child);
         decision = (TextView) findViewById(R.id.tv_customer_detail_decision);
+        addRecord= (Button) findViewById(R.id.bt_customer_detail_add_record);
         initData();
     }
     public void initData(){
@@ -95,13 +105,27 @@ public class CustomerDetailActivity extends AppCompatActivity {
                     dept.setText(customer.getCupDepartmentName());
                     decision.setText(customer.getCdecisionMaking());
                     family.setText(customer.getCfamilyStructure());
-                    //日期形式birthday.setText(customer.getCbirthday());
+                    birthday.setText(customer.getCbirthday());
                     condition.setText(customer.getCcondition());
                     child.setText(customer.getCchildren());
                     mate.setText(customer.getCmateHealth());
                     interesting.setText(customer.getCinterests());
+                    //设置回访记录需要数据
+                    rName=customer.getCcustomerName();
+                    rNameCode=customer.getCcustomerCode();
+                    rDept= customer.getCupDepartmentName();
+                    rDeptCode=customer.getCupDepartmentCode();
                 }
             });
         }
+    }
+    public void toAddRecord(View view){
+        Intent intent = new Intent();
+        intent.putExtra("name",rName);
+        intent.putExtra("nameCode",rNameCode);
+        intent.putExtra("dept",rDept);
+        intent.putExtra("deptCode",rDeptCode);
+        intent.setClass(CustomerDetailActivity.this, RecordDetailActivity.class);
+        startActivity(intent);
     }
 }

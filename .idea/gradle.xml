@@ -13,7 +13,6 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/floating_action_button_library" />
             <option value="$PROJECT_DIR$/libzxing" />
-            <option value="$PROJECT_DIR$/stick_header_view_pager_library" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -43,7 +43,7 @@
             android:label="@string/title_activity_plan_search" />
         <activity
             android:name=".login.FaceActivity"
-            android:label="新华机械"
+            android:label="清大德人"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -90,7 +90,9 @@
         <activity android:name=".logisticsRecive.LogisticsGetActivity" />
         <activity android:name=".logisticsRecive.LogisticsForActivity" />
         <activity android:name=".customer.CustomerActivity" />
-        <activity android:name=".customer.CustomerDetailActivity"></activity>
+        <activity android:name=".customer.CustomerDetailActivity" />
+        <activity android:name=".record.RecordActivity" />
+        <activity android:name=".record.RecordDetailActivity"></activity>
     </application>
 
 </manifest>

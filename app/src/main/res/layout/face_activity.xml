@@ -4,5 +4,5 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/banner"
-    tools:context=".FaceActivity" >
+    tools:context=".login.FaceActivity" >
 </LinearLayout>

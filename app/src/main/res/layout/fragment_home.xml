@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </com.yanz.machine.shinva.MyView.MyGridView>
-            <View
+            <!--<View
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
@@ -58,7 +58,7 @@
                 android:verticalSpacing="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            </com.yanz.machine.shinva.MyView.MyGridView>
+            </com.yanz.machine.shinva.MyView.MyGridView>-->
 
 
         </LinearLayout>

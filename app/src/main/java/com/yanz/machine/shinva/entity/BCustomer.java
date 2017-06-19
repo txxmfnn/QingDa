@@ -20,7 +20,7 @@ public class BCustomer implements java.io.Serializable {
 	private String caddress;
 	private String cinterests;
 	private String ceducation;
-	private Date cbirthday;
+	private String cbirthday;
 	private String cfamilyStructure;
 	private String cchildren;
 	private String cdecisionMaking;
@@ -48,7 +48,7 @@ public class BCustomer implements java.io.Serializable {
 			String ccustomerName, String cupDepartmentCode,
 			String cupDepartmentName, String csex, String cage,
 			String ctelephone, String caddress, String cinterests,
-			String ceducation, Date cbirthday, String cfamilyStructure,
+			String ceducation, String cbirthday, String cfamilyStructure,
 			String cchildren, String cdecisionMaking, String ccondition,
 			String cmateHealth, String cmakerCode, String cmakerName,
 			String dmakeDate, String cinfo) {
@@ -174,11 +174,11 @@ public class BCustomer implements java.io.Serializable {
 
 
 
-	public Date getCbirthday() {
+	public String getCbirthday() {
 		return this.cbirthday;
 	}
 
-	public void setCbirthday(Date cbirthday) {
+	public void setCbirthday(String cbirthday) {
 		this.cbirthday = cbirthday;
 	}
 

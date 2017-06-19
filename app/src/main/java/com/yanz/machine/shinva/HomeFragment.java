@@ -39,13 +39,14 @@ import com.yanz.machine.shinva.planSearch.InputPlanActivity;
 import com.yanz.machine.shinva.planSearch.PlanTrackActivity;
 import com.yanz.machine.shinva.rdRecord.RdRecordInActivity;
 import com.yanz.machine.shinva.rdRecord.RdRecordOutActivity;
+import com.yanz.machine.shinva.record.RecordActivity;
 import com.yanz.machine.shinva.unqualifyPartDeal.UnqualifyPartDealActivity;
 import com.yanz.machine.shinva.update.UpdateManager;
 import com.yanz.machine.shinva.util.ClickUtil;
 import com.yanz.machine.shinva.view.AbOnItemClickListener;
 import com.yanz.machine.shinva.view.AbSlidingPlayView;
 
-import java.util.ArrayList;
+
 
 
 public class HomeFragment extends Fragment {
@@ -76,11 +77,11 @@ public class HomeFragment extends Fragment {
     };
     public String[] img_menu_text_search = {
             "顾客查询",
-            "物料查询",
-            "成品订单",
-            "质量事故",
-            "入库台账",
-            "出库台账"
+            "回访记录",
+            "待定1",
+            "待定2",
+            "待定3",
+            "待定4"
     };
     //第二个menu操作
     public int[] img_menu_classify = {
@@ -118,7 +119,7 @@ public class HomeFragment extends Fragment {
 
     //初始化
     private void initView(View view){
-        iv_shao = (ImageView) view.findViewById(R.id.iv_shao);
+        /*iv_shao = (ImageView) view.findViewById(R.id.iv_shao);
         iv_shao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +128,7 @@ public class HomeFragment extends Fragment {
                 //startActivity(intent);
                 startActivityForResult(intent,0);
             }
-        });
+        });*/
         tv_top_title= (TextView) view.findViewById(R.id.tv_top_title);
         tv_top_title.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,14 +152,14 @@ public class HomeFragment extends Fragment {
 
             }
         });
-        iv_shu = (ImageView) view.findViewById(R.id.iv_refresh);
+        /*iv_shu = (ImageView) view.findViewById(R.id.iv_refresh);
         iv_shu.setOnClickListener(new ClickUtil() {
             @Override
             protected void onNoDoubleClick(View view) {
                 Intent intent = new Intent(getActivity(), InputPlanActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         /*gridView_classify = (GridView) view.findViewById(R.id.gv_menu_search);
         gridView_classify.setSelector(new ColorDrawable(Color.TRANSPARENT));
@@ -168,8 +169,8 @@ public class HomeFragment extends Fragment {
         menuGridViewSearch = (MyGridView) view.findViewById(R.id.gv_menu_search);
         menuGridViewSearch.setAdapter(new MyGridAdapter(getActivity(),img_menu_classify_search,img_menu_text_search));
         //第二个
-        menuGridView = (MyGridView) view.findViewById(R.id.gv_menu);
-        menuGridView.setAdapter(new MyGridAdapter(getActivity(),img_menu_classify,img_menu_text));
+        //menuGridView = (MyGridView) view.findViewById(R.id.gv_menu);
+        //menuGridView.setAdapter(new MyGridAdapter(getActivity(),img_menu_classify,img_menu_text));
 
         menuGridViewSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -182,30 +183,34 @@ public class HomeFragment extends Fragment {
                         startActivity(intent);
                         break;
                     case 1:
-                        intent.setClass(getActivity(), SearchConditionActivity.class);
-                        intent.putExtra("webRequest","stock");
+                        intent.setClass(getActivity(), RecordActivity.class);
+                        //intent.putExtra("webRequest","stock");
                         startActivity(intent);
                         break;
                     case 2:
-                        intent.setClass(getActivity(), OrderInfoSearchActivity.class);
-                        startActivity(intent);
+                        Toast.makeText(getActivity(),"功能暂未开放",Toast.LENGTH_SHORT).show();
+//                        intent.setClass(getActivity(), OrderInfoSearchActivity.class);
+//                        startActivity(intent);
                         break;
                     case 3:
-                        intent.setClass(getActivity(), UnqualifyPartDealActivity.class);
-                        startActivity(intent);
+                        Toast.makeText(getActivity(),"功能暂未开放",Toast.LENGTH_SHORT).show();
+//                        intent.setClass(getActivity(), UnqualifyPartDealActivity.class);
+//                        startActivity(intent);
                         break;
                     case 4:
-                        intent.setClass(getActivity(), RdRecordInActivity.class);
-                        startActivity(intent);
+                        Toast.makeText(getActivity(),"功能暂未开放",Toast.LENGTH_SHORT).show();
+//                        intent.setClass(getActivity(), RdRecordInActivity.class);
+//                        startActivity(intent);
                         break;
                     case 5:
-                        intent.setClass(getActivity(), RdRecordOutActivity.class);
-                        startActivity(intent);
+                        Toast.makeText(getActivity(),"功能暂未开放",Toast.LENGTH_SHORT).show();
+//                        intent.setClass(getActivity(), RdRecordOutActivity.class);
+//                        startActivity(intent);
                         break;
                 }
             }
         });
-        menuGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      /*  menuGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
@@ -232,7 +237,7 @@ public class HomeFragment extends Fragment {
                         break;
                 }
             }
-        });
+        });*/
 
         /*gridView_classify.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             //点击事件
